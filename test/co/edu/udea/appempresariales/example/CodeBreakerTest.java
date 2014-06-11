@@ -48,6 +48,7 @@ public class CodeBreakerTest {
 		Assert.assertEquals("XXXX", resultado);
 	}
 	
+	@Test
 	public void retornarVacio() {
 		String numeroPrueba = "0010";
 		code.setNumero(numero);
@@ -55,11 +56,36 @@ public class CodeBreakerTest {
 		Assert.assertEquals("", resultado);
 	}
 	
+	@Test
 	public void retornarVacioPorNumeroNoValido() {
 		String numeroPrueba = "0rg0";
 		code.setNumero(numero);
 		String resultado = code.comparar(numeroPrueba);
 		Assert.assertEquals("", resultado);
+	}
+	
+	@Test
+	public void retornarUna_() {
+		String numeroPrueba = "0400";
+		code.setNumero(numero);
+		String resultado = code.comparar(numeroPrueba);
+		Assert.assertEquals("_", resultado);
+	}
+	
+	@Test
+	public void retornarX_() {
+		String numeroPrueba = "3400";
+		code.setNumero(numero);
+		String resultado = code.comparar(numeroPrueba);
+		Assert.assertEquals("X_", resultado);
+	}
+	
+	@Test
+	public void retornar____() {
+		String numeroPrueba = "9483";
+		code.setNumero(numero);
+		String resultado = code.comparar(numeroPrueba);
+		Assert.assertEquals("____", resultado);
 	}
 
 }

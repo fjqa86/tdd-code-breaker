@@ -18,10 +18,15 @@ public class CodeBreaker {
 		{
 			char x= numeroReal.charAt(i);
 			char y = numeroPrueba.charAt(i);
-			System.out.println(x+" "+y);
 			if(x==y)
 			{
 				resultado=resultado+"X";
+			}
+			else
+			{
+				if(numeroPrueba.contains(""+x)){
+					resultado=resultado+"_";
+				}
 			}
 		}
 		
